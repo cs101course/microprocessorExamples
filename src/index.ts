@@ -15,17 +15,39 @@ export { processor as proc4I } from "./processors/proc4I";
 export { processor as proc4IV } from "./processors/proc4IV";
 export { processor as proc8IV } from "./processors/proc8IV";
 
-import { instructionHeadings as proc8XHeadings } from "./processors/proc8IV";
-import { Processor } from "@cs101/microprocessor/dist/types";
+export {
+  Coordinate,
+  SupportedPeripherals,
+  supportsAudio,
+  supportsLcd,
+  supportsPixels,
+  supportsRobot
+} from "./types";
+
+export {
+  Action
+} from "./peripherals/actions";
+
+export {
+  Pixel,
+  PixelDisplay
+} from "./peripherals/pixelDisplay";
+
+export {
+  Robot
+} from "./peripherals/robot";
+
 import { SupportedPeripherals } from "./types";
+import { instructionHeadings as proc8XHeadings } from "./processors/proc8IV";
+import { P } from "@cs101/microprocessor";
 
 const downgrade = (
-  processor: Processor<SupportedPeripherals>,
+  processor: P<SupportedPeripherals>,
   name: string,
   instructionRanges: Array<string>,
   registers?: Array<string>
 ) => {
-  const newProcessor: Processor<SupportedPeripherals> = {
+  const newProcessor: P<SupportedPeripherals> = {
     ...processor,
     instructions: {
       ...processor.instructions,
@@ -56,7 +78,7 @@ const downgrade = (
 };
 
 
-const robots4Bit: Array<Processor<SupportedPeripherals>> = [
+const robots4Bit: Array<P<SupportedPeripherals>> = [
   robo4I,
   robo4II,
   robo4IV,
@@ -66,7 +88,7 @@ const robots4Bit: Array<Processor<SupportedPeripherals>> = [
 export const proc4II = downgrade(proc4IV, "4-Bit Microprocessor II", ["9", "11"]);
 export const proc4III = downgrade(proc4IV, "4-Bit Microprocessor III", ["13-15"]);
 
-const processors4Bit: Array<Processor<SupportedPeripherals>> = [
+const processors4Bit: Array<P<SupportedPeripherals>> = [
   proc4I,
   proc4II,
   proc4III,
@@ -77,7 +99,7 @@ export const proc8III = downgrade(proc8IV, "8-bit Microprocessor III", ["31-38",
 export const proc8II = downgrade(proc8III, "8-bit Microprocessor II", ["27-30"]);
 export const proc8I = downgrade(proc8II, "8-bit Microprocessor I", ["8-15", "64-69"], ["SP"]);
 
-const processors8Bit: Array<Processor<SupportedPeripherals>> = [
+const processors8Bit: Array<P<SupportedPeripherals>> = [
   proc8I,
   proc8II,
   proc8III,
@@ -91,7 +113,7 @@ allHeadings[allProcessors.length-3] = proc8XHeadings;
 allHeadings[allProcessors.length-2] = proc8XHeadings;
 allHeadings[allProcessors.length-1] = proc8XHeadings;
 
-const deviceLookup: Record<string, Processor<SupportedPeripherals>> = {
+const deviceLookup: Record<string, P<SupportedPeripherals>> = {
   "ri": robo4I,
   "rii": robo4II,
   "riv": robo4IV,

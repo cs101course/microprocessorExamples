@@ -1,28 +1,32 @@
 {
-  "name": "microprocessorexamples",
-  "version": "1.0.0",
+  "name": "@cs101/microprocessorexamples",
+  "version": "1.0.5",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cs101course/microprocessorExamples.git"
+  },
+  "author": "David Collien",
+  "license": "MIT",
   "description": "Example microprocessor implementations",
-  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/cs101course/microprocessorExamples/issues"
+  },
+  "homepage": "https://github.com/cs101course/microprocessorExamples#readme",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cs101course/microprocessorExamples.git"
-  },
-  "author": "David Collien",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cs101course/microprocessorExamples/issues"
-  },
-  "homepage": "https://github.com/cs101course/microprocessorExamples#readme",
   "dependencies": {
-    "@cs101/microprocessor": "^1.1.1"
+    "@cs101/microprocessor": "^1.1.4"
   },
   "devDependencies": {
     "typescript": "^4.2.4"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

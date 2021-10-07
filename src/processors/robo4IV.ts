@@ -2,11 +2,8 @@ import { RobotJourney, RobotPeripheral } from "../peripherals/robot";
 import { Speaker, SpeakerPeripheral } from "../peripherals/speaker";
 import { Actions, ActionsPeripheral } from "../peripherals/actions";
 
-import { ProcessorState as State } from "@cs101/microprocessor/dist/state";
+import { ProcessorState as State, P as Processor } from "@cs101/microprocessor";
 import { Coordinate } from "../types";
-
-import { Processor } from "@cs101/microprocessor/dist/types";
-
 
 const robot = new RobotPeripheral();
 const speaker = new SpeakerPeripheral();

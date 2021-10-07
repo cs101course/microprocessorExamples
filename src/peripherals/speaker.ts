@@ -1,4 +1,4 @@
-import { Peripheral } from  "@cs101/microprocessor/dist/types";
+import { Peripheral } from  "@cs101/microprocessor";
 
 export type Speaker = {
   audioBuffer: Array<number>;

@@ -2,9 +2,9 @@ import { Fire, FirePeripheral } from "../peripherals/fire";
 import { Lcd, LcdPeripheral } from "../peripherals/lcd";
 import { PixelDisplay, PixelDisplayPeripheral } from "../peripherals/pixelDisplay";
 import { Speaker, SpeakerPeripheral } from "../peripherals/speaker";
-import { ProcessorState as State } from "@cs101/microprocessor/dist/state";
+import { ProcessorState as State } from "@cs101/microprocessor";
 
-import { Instruction, Processor } from "@cs101/microprocessor/dist/types";
+import { Instruction, P as Processor } from "@cs101/microprocessor";
 
 const lcd = new LcdPeripheral();
 const speaker = new SpeakerPeripheral();
@@ -121,7 +121,7 @@ export const processor: Processor<PeripheralType> = {
       },
       ipIncrement: 1,
       mnemonic: "INC",
-      code: "R0 = R0 + R1"
+      code: "R0 = R0 + 1"
     },
     "2": {
       description: "Decrement",

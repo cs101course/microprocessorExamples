@@ -5,12 +5,15 @@
   ],
   "compilerOptions": {
     "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "commonjs",
     "target": "es5",
     "lib": ["es2020"],
     "allowJs": true,
     "moduleResolution": "node",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "esModuleInterop": true
   }
 }

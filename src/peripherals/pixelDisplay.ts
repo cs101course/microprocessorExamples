@@ -1,4 +1,4 @@
-import { ProcessorState, Peripheral } from  "@cs101/microprocessor/dist/types";
+import { Peripheral } from  "@cs101/microprocessor";
 
 import { colors } from "./xTermColors"
 

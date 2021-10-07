@@ -1,8 +1,8 @@
 import { Lcd, LcdPeripheral } from "../peripherals/lcd";
 import { Speaker, SpeakerPeripheral } from "../peripherals/speaker";
-import { ProcessorState as State } from "@cs101/microprocessor/dist/state";
+import { ProcessorState as State } from "@cs101/microprocessor";
 
-import { Processor } from "@cs101/microprocessor/dist/types";
+import { P as Processor } from "@cs101/microprocessor";
 import { Fire, FirePeripheral } from "../peripherals/fire";
 
 const lcd = new LcdPeripheral();
@@ -94,9 +94,9 @@ export const processor: Processor<Lcd & Speaker & Fire> = {
       description: "Print R0 (decimal value is printed)",
       execute: (ps) => {
         const peripherals = State.getPeripherals(ps);
-        const value = State.getArgument(ps);
+        const value = State.getRegister(ps, "R0");
 
-        lcd.printAscii(peripherals, value);
+        lcd.printNumber(peripherals, value);
       },
       ipIncrement: 1
     },

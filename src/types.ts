@@ -5,7 +5,7 @@ import { Speaker } from "./peripherals/speaker";
 import { RobotJourney } from "./peripherals/robot";
 import { Actions } from "./peripherals/actions";
 
-import { ProcessorState } from "@cs101/microprocessor/dist/types";
+import { PS } from "@cs101/microprocessor";
 export interface Coordinate {
   row: number;
   column: number;
@@ -19,22 +19,22 @@ type RobotPeripherals = RobotJourney & Speaker & Actions<Coordinate> | (RobotJou
 
 export type SupportedPeripherals = AudioPeripherals | LcdPeripherals | FirePeripherals | PixelPeripherals | RobotPeripherals
 
-export const supportsAudio = (state: ProcessorState<any>): state is ProcessorState<AudioPeripherals> => {
+export const supportsAudio = (state: PS<any>): state is PS<AudioPeripherals> => {
   return state.state.peripherals.audioBuffer !== undefined;
 };
 
-export const supportsLcd = (state: ProcessorState<any>): state is ProcessorState<LcdPeripherals> => {
+export const supportsLcd = (state: PS<any>): state is PS<LcdPeripherals> => {
   return state.state.peripherals.lcdOutput !== undefined;
 };
 
-export const supportsFire = (state: ProcessorState<any>): state is ProcessorState<FirePeripherals> => {
+export const supportsFire = (state: PS<any>): state is PS<FirePeripherals> => {
   return state.state.peripherals.isOnFire !== undefined;
 };
 
-export const supportsPixels = (state: ProcessorState<any>): state is ProcessorState<PixelPeripherals> => {
+export const supportsPixels = (state: PS<any>): state is PS<PixelPeripherals> => {
   return state.state.peripherals.pixels !== undefined;
 };
 
-export const supportsRobot = (state: ProcessorState<any>): state is ProcessorState<RobotPeripherals> => {
+export const supportsRobot = (state: PS<any>): state is PS<RobotPeripherals> => {
   return state.state.peripherals.robotStates !== undefined;
 };
