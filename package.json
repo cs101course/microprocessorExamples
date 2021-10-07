@@ -1,0 +1,28 @@
+{
+  "name": "microprocessorexamples",
+  "version": "1.0.0",
+  "description": "Example microprocessor implementations",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cs101course/microprocessorExamples.git"
+  },
+  "author": "David Collien",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cs101course/microprocessorExamples/issues"
+  },
+  "homepage": "https://github.com/cs101course/microprocessorExamples#readme",
+  "dependencies": {
+    "@cs101/microprocessor": "^1.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
