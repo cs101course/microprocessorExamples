@@ -85,8 +85,8 @@ const robots4Bit: Array<P<SupportedPeripherals>> = [
 ];
 
 
-export const proc4II = downgrade(proc4IV, "4-Bit Microprocessor II", ["9", "11"]);
 export const proc4III = downgrade(proc4IV, "4-Bit Microprocessor III", ["13-15"]);
+export const proc4II = downgrade(proc4III, "4-Bit Microprocessor II", ["10", "12"]);
 
 const processors4Bit: Array<P<SupportedPeripherals>> = [
   proc4I,
