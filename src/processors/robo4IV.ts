@@ -47,10 +47,10 @@ export const processor: Processor<RobotJourney & Speaker & Actions<Coordinate>> 
       ipIncrement: 1
     },
     "2": {
-      description: "Increment R (R = R + 1)",
+      description: "Decrement R (R = R - 1)",
       execute: (ps) => {
         const r = State.getRegister(ps, "R");
-        State.setRegister(ps, "R", r + 1);
+        State.setRegister(ps, "R", r - 1);
       },
       ipIncrement: 1
     },

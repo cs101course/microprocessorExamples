@@ -4,6 +4,7 @@ import { processor as robo4II } from "./processors/robo4II";
 import { processor as robo4IV } from "./processors/robo4IV";
 
 import { processor as proc4I } from "./processors/proc4I";
+import { processor as proc4Im } from "./processors/proc4Im";
 import { processor as proc4IV } from "./processors/proc4IV";
 import { processor as proc8IV } from "./processors/proc8IV";
 
@@ -12,6 +13,7 @@ export { processor as robo4II } from "./processors/robo4II";
 export { processor as robo4IV } from "./processors/robo4IV";
 
 export { processor as proc4I } from "./processors/proc4I";
+export { processor as proc4Im } from "./processors/proc4Im";
 export { processor as proc4IV } from "./processors/proc4IV";
 export { processor as proc8IV } from "./processors/proc8IV";
 
@@ -119,6 +121,7 @@ const deviceLookup: Record<string, P<SupportedPeripherals>> = {
   "riv": robo4IV,
   
   "4i": proc4I,
+  "4im": proc4Im,
   "4ii": proc4II,
   "4iii": proc4III,
   "4iv": proc4IV,
