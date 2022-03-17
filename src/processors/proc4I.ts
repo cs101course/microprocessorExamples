@@ -63,7 +63,7 @@ export const processor: Processor<Lcd & Speaker & Fire> = {
       ipIncrement: 1
     },
     {
-      description: "Decrement R1 (R1 = R0 - 1)",
+      description: "Decrement R1 (R1 = R1 - 1)",
       execute: (ps) => {
         const r1 = State.getRegister(ps, "R1");
         State.setRegister(ps, "R1", r1 - 1);
